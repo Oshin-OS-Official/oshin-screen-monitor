@@ -1,0 +1,25 @@
+# Maintainer : Team Oshin <https://github.com/Oshin-OS/>
+
+pkgname=oshin-screen-monitor
+pkgdesc='Script for screentime monitoring'
+pkgver=1
+pkgrel=1
+arch=('any')
+url="https://github.com/Oshin-OS/oshin-screen-monitor"
+license=('GPL 3.0')
+makedepends=('git')
+source=("git+$url.git")
+sha256sums=('SKIP')
+
+package(){
+    install -d ${pkgdir}/usr/share/oshin-screen-monitor
+    install -d ${pkgdir}/usr/share/applications
+    install -d ${pkgdir}/usr/bin
+    install -d ${pkgdir}/etc/skel/.config/autostart
+
+    cp -r ${srcdir}/oshin-screen-monitor/src/oshin-screen-monitor.sh "${pkgdir}/usr/bin/oshin-screen-monitor.sh"
+    chmod +x "${pkgdir}/usr/bin/oshin-screen-monitor.sh"
+
+    cp -r ${srcdir}/oshin-screen-monitor/src/oshin-screen-monitor.desktop "${pkgdir}/etc/skel/.config/autostart/oshin-screen-monitor.desktop"
+    chmod +x "${pkgdir}/etc/skel/.config/autostart/oshin-screen-monitor.desktop"
+}
