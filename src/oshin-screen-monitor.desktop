@@ -2,7 +2,7 @@
 Type=Application
 Encoding=UTF-8
 Name=Oshin Screentime Monitor
-Exec=/usr/bin/oshin-screentime-monitor.sh
+Exec=/usr/bin/oshin-screen-monitor.sh
 Icon=/usr/share/oshin-welcome/img/oshin-welcome.png
 Terminal=false
 StartupNotify=true
